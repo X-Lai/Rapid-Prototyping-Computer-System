@@ -42,7 +42,6 @@ class DBmanager:
             print("Table %s is not found" % table_name)
             return {}
         data = self.cursor.fetchall()
-        print(data)
         if data == None:
             return {}
         result = {}

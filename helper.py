@@ -25,6 +25,19 @@ def indivisual_station_usage(filepath):
             dict2[station_id][student_id] = time_stamp
     return dict1, dict2
 
+def total_station_time(stu_to_sta):
+    '''
+    :param filepath: file path of the csv file
+    :return dict: total usage of all stations each student.
+    '''
+    dict = {}
+    for stu_id in stu_to_sta:
+        total_time = 0
+        for station_id in stu_to_sta[stu_id]:
+            total_time += stu_to_sta[stu_id][station_id]
+        dict[stu_id] = total_time
+    return dict
+
 def find_top3_stations(stu_to_sta):
     '''
 
