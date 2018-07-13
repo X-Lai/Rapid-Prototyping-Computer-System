@@ -27,7 +27,7 @@ def indivisual_station_usage(filepath):
 
 def total_station_time(stu_to_sta):
     '''
-    :param filepath: file path of the csv file
+    :param stu_to_sta: stations usage per student
     :return dict: total usage of all stations each student.
     '''
     dict = {}
@@ -54,3 +54,16 @@ def find_top3_stations(stu_to_sta):
         stations = list(sta_to_timestamp.keys())
         stu_to_top3sta[stu] = sorted(stations, key=lambda x:sta_to_timestamp[x], reverse=True)[:3]
     return stu_to_top3sta
+
+def build_social_network(filepath):
+    with open(filepath) as file:
+        reader = csv.reader(file)
+        result = {}
+        data = list(reader)
+        for item1 in data:
+            row = {}
+            for item2 in data:
+                row[item2[0]] = np.sum(np.array(item2[1:]) == np.array(item1[1:])).tolist()
+            result[item1[0]] = row
+        return result
+
