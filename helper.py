@@ -40,7 +40,6 @@ def total_station_time(stu_to_sta):
 
 def find_top3_stations(stu_to_sta):
     '''
-
     :param stu_to_sta: a dictionay that maps every student to another dictionary which maps
                 every station to the time stamp spent in the corresponding station.
     :return:stu_to_top3sta: a dictionary that maps every student to a list which sort in order the

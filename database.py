@@ -32,7 +32,7 @@ class DBmanager:
 
     def read_dict(self, table_name):
         '''
-        read a dict from the table named table_name of the setting dataset
+        read a dict from the table named table_name of the setting database
         :param table_name: a str
         :return: a python dictionary. If table_name not found, return {}
         '''
